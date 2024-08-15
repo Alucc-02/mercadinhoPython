@@ -5,6 +5,12 @@ class Cliente:
         self.senha = senha
         self.email = email
 
+# Requisitos básicos p/ produtos
+# - Cadastrar novos produtos, incluindo nome, descrição, preço, quantidade em estoque, categoria, etc.
+# - Editar informações de produtos existentes.
+# - Remover produtos do sistema.
+# - Realizar buscas por produtos, filtrando por nome, categoria, preço, etc.
+
 listaProdutosSis = []
 
 class Produto:
@@ -18,23 +24,33 @@ class Produto:
 
 def addProduto():
     print("Insira os dados do novo produto.")
+    listaProdutosTexto = open('produtos.txt', 'a')
     nome = input("Nome: ")
+    listaProdutosTexto.write(f"nome = {nome}\n")
     id = input("ID: ")
+    listaProdutosTexto.write(f"id = {id}\n")
     desc = input("Descrição: ")
+    listaProdutosTexto.write(f"desc = {desc}\n")
     preco = float(input("Preço: ")) #usar "." para centavos
+    listaProdutosTexto.write(f"preco = {preco}\n")
     qnt = int(input("Quantidade no estoque: "))
+    listaProdutosTexto.write(f"qnt = {qnt}\n")
     cat = input("Categoria: ")
-
+    listaProdutosTexto.writelines(f"cat = {cat}\n")
+    listaProdutosTexto.writelines("")
+    listaProdutosTexto.close()
     prod = Produto(nome, id, desc, preco, qnt, cat)
     listaProdutosSis.append(prod)
 
 def listarProdutos():
     i = 0
-    print("==="*5)
+    print("========"*5)
+    if len(listaProdutosSis) == 0:
+            print("Sem registros...")
     while i < len(listaProdutosSis):
-        print(f"[{i+1}]. {listaProdutosSis[i]}")
+        print(f"[{i+1}]. {listaProdutosSis[i.nome]}")
         i+=1
-    print("==="*5)
+    print("========"*5)
 
 def remProdutoSis():
     esc = input('digite o número do produto que deseja remover')
