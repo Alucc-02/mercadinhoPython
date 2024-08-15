@@ -1,0 +1,13 @@
+nome = Batata
+id = 0000
+desc = Tuberculo
+preco = 0.5
+qnt = 100
+cat = veg
+
+nome = Cenoura
+id = 0001
+desc = Um legume
+preco = 0.6
+qnt = 244
+cat = veg
