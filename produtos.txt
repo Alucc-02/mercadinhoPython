@@ -4,7 +4,6 @@ desc = Tuberculo
 preco = 0.5
 qnt = 100
 cat = veg
-
 nome = Cenoura
 id = 0001
 desc = Um legume
